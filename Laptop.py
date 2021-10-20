@@ -18,10 +18,7 @@ class Laptop:
         return self.name
 
     def show_info(self):
+        print(f"\n \t\t\tThông tin của Laptop: ")
         print(f"Id : {self.get_id()}")
         print(f"Tên Laptop : {self.name}")
 
-Lt = Laptop("Msi01" , "Laptop MSI EK810")
-
-Lt.show_info()
-print(Lt.count)
