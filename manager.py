@@ -25,7 +25,7 @@ while logged_in == False:
                 3. Xóa Laptop.
                 4. Xem thông tin tất cả Laptop.
                 5. Tìm ID Laptop
-                6. Tìm tên Laptop. 
+                6. Tìm Tên Laptop. 
                 7. Số lượng Laptop đang có.
                 ''')
                 select = input("Mời bạn chọn chức năng: ")
@@ -37,7 +37,9 @@ while logged_in == False:
                     elif select == 1:
                         id = input("Nhập ID Laptop: ")
                         name = input("Nhập tên Laptop: ")
-                        Lt = Laptop(id, name)
+                        kho = input ("Nhập số lượng tồn kho :")
+                        gia = input("Nhập thành giá Laptop:")
+                        Lt = Laptop(id, name, kho, gia)
                         ds.append(Lt)
 
                     
@@ -46,6 +48,8 @@ while logged_in == False:
                         for i in ds:
                             if i.get_id() == id:
                                 i.set_Name( input ("Nhập tên mới : "))
+                                i.set_Kho( input ("Nhập số lượng mới: "))
+                                i.set_Gia( input ("Nhập Thành Gía mới: "))
                                 i.show_info()
                     
 
@@ -72,6 +76,8 @@ while logged_in == False:
                         for i in ds:
                             if i.get_id() == id:
                                 i.show_info()
+                            else:
+                                print("Không tìm thấy ID! Vui lòng nhập lại!")
 
 
                     elif select == 6:
@@ -79,6 +85,8 @@ while logged_in == False:
                         for i in ds:
                             if i.get_Name() == name:
                                 i.show_info()
+                            else:
+                                print("Không tìm thấy tên Laptop! Vui lòng nhập lại!")
 
 
                     elif select == 7 :
